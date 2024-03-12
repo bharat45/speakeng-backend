@@ -794,6 +794,7 @@ export interface ApiHeroSectionHeroSection extends Schema.SingleType {
     singularName: 'hero-section';
     pluralName: 'hero-sections';
     displayName: 'HeroSection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,6 +803,12 @@ export interface ApiHeroSectionHeroSection extends Schema.SingleType {
     profilePicture: Attribute.Media;
     title: Attribute.String;
     tagLine: Attribute.Text;
+    phoneNumber: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        minLength: 10;
+        maxLength: 10;
+      }>;
+    whatsappMessage: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
